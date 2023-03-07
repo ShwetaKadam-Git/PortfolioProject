@@ -1,2 +1,0 @@
-# FirstPortfolio
- SQL projects
