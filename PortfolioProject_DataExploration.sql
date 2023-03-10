@@ -1,4 +1,9 @@
---DATA EXPLORATION
+/**
+DATA Exploration Sample project by referring Alex The Analyst youtube channel by Alex Freberg
+The data I used in this is the latest one i.e., From Feb 2020 to March 2023. Sample files are added in the project section you can download and import it in your SQL server using SQL import and export wizard
+FileNames - CovidDeaths, CovidVaccinations
+**/
+
 SELECT * 
 FROM PortfolioProject..CovidVaccinations
 ORDER BY 3,4
@@ -11,17 +16,17 @@ ORDER BY 3,4
 SELECT location,date,total_cases,new_cases,total_deaths,population
 FROM PortfolioProject..CovidDeaths
 WHERE continent is not null
-ORDER BY 1,2
+ORDER BY location,date
 
 --Total cases vs Total deaths in a country
 SELECT location,date,total_cases,total_deaths,(total_deaths/total_cases)*100 as Death_Percentage
 FROM PortfolioProject..CovidDeaths
 where location like 'India'
 and continent is not null
-ORDER BY 1,2
+ORDER BY location,date
 
---	Total Cases vs Population 
---Showe percentage of population got covid
+--Total Cases vs Population 
+--Showing percentage of population got covid
 SELECT location,date,total_cases,Population,(total_cases/population)*100 as PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
 where location like 'India'
@@ -97,7 +102,7 @@ JOIN PortfolioProject..CovidVaccinations VAC
 WHERE DEA.continent is not null 
 ORDER BY 2,3
 
--- USING CTE
+-- USING CTE (Common Table Expression)
 WITH PopulationVsVaccination(Continent,Location,Date,Population,New_Vaccinations,RollingPeopleVaccinated)
 as 
 (
@@ -114,7 +119,7 @@ WHERE DEA.continent is not null
 SELECT *,(RollingPeopleVaccinated/Population)*100 
 FROM PopulationVsVaccination
 
----TEMP TABLE
+---TEMORARY TABLE
 DROP TABLE IF EXISTS #PercentPopulationVaccinated
 CREATE TABLE #PercentPopulationVaccinated
 (
@@ -152,13 +157,3 @@ JOIN PortfolioProject..CovidVaccinations VAC
 	AND DEA.date=VAC.date
 WHERE DEA.continent is not null 
 --ORDER BY 2,3
-
-
-
-
-
-
-
-
-
-
