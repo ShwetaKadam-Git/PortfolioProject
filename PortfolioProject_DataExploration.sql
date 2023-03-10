@@ -1,6 +1,10 @@
 /**
 DATA Exploration Sample project by referring Alex The Analyst youtube channel by Alex Freberg
-The data I used in this is the latest one i.e., From Feb 2020 to March 2023. Sample files are added in the project section you can download and import it in your SQL server using SQL import and export wizard
+The data I used in this is the latest one i.e., From Feb 2020 to March 2023. 
+Sample files have size more than 25 mb so could not upload it.
+Refer these google drive links for reference - CovidDeaths - https://docs.google.com/spreadsheets/d/1Ka_O36gl5HlHiIpl6sAiouafBTglA34R/edit?usp=share_link&ouid=112593628633626173836&rtpof=true&sd=true
+CovidVaccination - https://docs.google.com/spreadsheets/d/1PBtaZPJS3DyfSa5RpLgK8NtUUiRN-GT1/edit?usp=sharing&ouid=112593628633626173836&rtpof=true&sd=true
+You can download and import it in your SQL server using SQL import and export wizard
 FileNames - CovidDeaths, CovidVaccinations
 **/
 
